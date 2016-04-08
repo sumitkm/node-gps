@@ -1,0 +1,23 @@
+{
+  "name": "nodegps",
+  "version": "0.0.1",
+  "description": "Read GPS in Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "raspberrypi",
+    "gps",
+    "adafruit"
+  ],
+  "author": "Sumit",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "http": "0.0.0",
+    "serialport": "file:///home/pi/myprojects/node-serialport",
+    "socket.io": "^1.4.5"
+  }
+}
