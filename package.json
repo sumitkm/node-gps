@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository":"https://github.com/sumitkm/nodegps.git",
   "keywords": [
     "node",
     "raspberrypi",
@@ -17,7 +18,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "http": "0.0.0",
-    "serialport": "file:///home/pi/myprojects/node-serialport",
+    "serialport": "../node-serialport",
     "socket.io": "^1.4.5"
   }
 }
