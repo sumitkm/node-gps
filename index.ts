@@ -1,23 +1,48 @@
-///<amd-dependency path="typings/main.d.ts" />
+///<reference path="typings/main.d.ts" />
 
-export class app
+import { GpsParser as GpsParser } from "node-gps-parser";
+import { GpsModel as GpsModel } from "node-gps-parser";
+
+import com  = require('serialport');
+
+class NodeGps
 {
-    com  = require('serialport');
-    serialPort = new com.SerialPort("/dev/ttyAMA0", {
-      baudrate: 9600,
-      parser: com.parsers.readline('\r\n')
-    });
+    private portName: string = "/dev/ttyAMA0"
+    private baudRate: number = 9600;
+    private serialPort: SerialPortStatic ;
 
-    constructor()
+    constructor(portName?: string, baudRate?: number)
+    {
+        if(portName != null)
+        {
+            this.portName = portName;
+        }
+        if(baudRate != null)
+        {
+            this.baudRate = baudRate;
+        }
+        
+        this.serialPort = new com.SerialPort(this.portName,
+        {
+          baudRate: this.baudRate,
+          parser: com.parsers.readline('\r\n')
+        });
+    }
+
+    connect = () =>
     {
         this.serialPort.on("open",  () =>
         {
           console.log('open');
-          this.serialPort.on('data', (data) => {
-            console.log(data);
+          this.serialPort.on('data', (data) =>
+          {
+              console.log(data);
           });
         });
     }
 }
 
-var nodeGps = new app();
+export { NodeGps } ;
+
+var gps = new NodeGps();
+gps.connect();
