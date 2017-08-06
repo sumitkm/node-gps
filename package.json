@@ -20,6 +20,6 @@
     "http": "0.0.0",
     "node-gps-parser": "0.0.4",
     "serialport": "../node-serialport",
-    "socket.io": "^1.4.5"
+    "socket.io": "^2.0.0"
   }
 }
