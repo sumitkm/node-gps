@@ -4,7 +4,9 @@
   "description": "Read from Adafuit GPS in Node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": "https://github.com/sumitkm/nodegps.git",
   "keywords": [
@@ -20,6 +22,8 @@
     "http": "0.0.0",
     "node-gps-parser": "0.0.4",
     "serialport": "../node-serialport",
-    "socket.io": "^1.4.5"
-  }
+    "socket.io": "2.0.2",
+    "snyk": "^1.69.7"
+  },
+  "snyk": true
 }
