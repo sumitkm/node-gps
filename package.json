@@ -23,7 +23,7 @@
     "node-gps-parser": "0.0.4",
     "serialport": "../node-serialport",
     "socket.io": "2.0.2",
-    "snyk": "^1.69.7"
+    "snyk": "^1.231.0"
   },
   "snyk": true
 }
